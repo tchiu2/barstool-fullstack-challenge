@@ -18,7 +18,7 @@ class Boxscore extends Component {
   }
 
   componentDidMount() {
-    getGame("NBA").then(res => {
+    getGame("MLB").then(res => {
       this.setState(res.data);
     });
   }
@@ -28,16 +28,17 @@ class Boxscore extends Component {
       <div className="boxscore">
         <Team 
           type="header"
+          results={this.state.home_results}
           scores={this.state.home_period_scores} />
         <Team 
           type="away"
           team={this.state.away_team}
-          results={[100]}
+          results={this.state.away_results}
           scores={this.state.away_period_scores} />
         <Team 
           type="home"
           team={this.state.home_team}
-          results={[100]}
+          results={this.state.home_results}
           scores={this.state.home_period_scores} />
         <TeamCard team={this.state.away_team} home="false" />
         <div className="boxscore-details-info">
