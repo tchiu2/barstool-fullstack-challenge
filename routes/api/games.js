@@ -13,9 +13,10 @@ router.get("/:league", (req, res) => {
   Game.findOne({ league })
     .then(game => {
       if (game && game.cache_expiration.getTime() > Date.now()) {
-        console.log("Return existing object");
+        console.log(`Return cached data. Cache expires: ${game.cache_expiration}`);
         res.json(game)
       } else {
+        console.log(`Fetching updated game data for ${league}. Last updated: ${game.updated}`);
         fetchGameData(SOURCE_URL[league], league)
           .then(game => res.json(game));
       }

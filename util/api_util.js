@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const Game = mongoose.model('Game');
 
 const fetchGameData = async (url, league) => {
-  console.log(`Fetching game data for ${league}`);
   try {
     const response = await axios.get(url);
     const data = response.data;
