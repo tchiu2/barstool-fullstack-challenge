@@ -14,6 +14,7 @@ class Boxscore extends Component {
       home_period_scores: [],
       away_results: [],
       home_results: [],
+      results_headers: [],
     };
   }
 
@@ -28,7 +29,7 @@ class Boxscore extends Component {
       <div className="boxscore flex-container vertical">
         <Team 
           type="header"
-          results={this.state.home_results}
+          results={this.state.results_headers}
           scores={this.state.home_period_scores} />
         <Team 
           type="away"
@@ -41,10 +42,8 @@ class Boxscore extends Component {
           results={this.state.home_results}
           scores={this.state.home_period_scores} />
         <BoxscoreDetails
-          teams={({
-            away: this.state.away_team,
-            home: this.state.home_team,
-          })}
+          away={this.state.away_team}
+          home={this.state.home_team}
           status={this.state.event_information.status} />
       </div>
     );

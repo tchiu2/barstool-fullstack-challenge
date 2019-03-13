@@ -23,6 +23,7 @@ const GameSchema = new Schema({
   home_period_scores: [Number],
   away_results: [Number],
   home_results: [Number],
+  results_headers: [String],
   event_information: {
     duration: String,
     status: String,
@@ -31,4 +32,4 @@ const GameSchema = new Schema({
   },
 })
 
-module.exports = Game = mongoose.model('Game', GameSchema);
+module.exports = mongoose.model('Game', GameSchema);
