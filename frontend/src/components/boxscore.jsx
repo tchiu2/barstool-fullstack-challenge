@@ -18,7 +18,7 @@ class Boxscore extends Component {
   }
 
   componentDidMount() {
-    getGame("MLB").then(res => {
+    getGame(this.props.league).then(res => {
       this.setState(res.data);
     });
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Boxscore from './components/boxscore';
+import ScoreIndex from './components/score_index';
 
 class App extends Component {
   render() {
@@ -9,7 +10,15 @@ class App extends Component {
       <HashRouter>
         <div className="app">
           <Switch>
-            <Route path="/" component={Boxscore} />
+            <Route 
+              path="/nba" 
+              render={(props) => <Boxscore {...props} league="NBA" />} 
+            />
+            <Route 
+              path="/mlb" 
+              render={(props) => <Boxscore {...props} league="MLB" />} 
+            />
+            <Route path="/" component={ScoreIndex} />
           </Switch>
         </div>
       </HashRouter>
