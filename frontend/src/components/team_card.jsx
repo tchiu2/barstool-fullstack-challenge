@@ -1,12 +1,11 @@
 import React from 'react';
 
 const TeamCard = ({ team, home }) => (
-  <div className={`boxscore-detaills-team${home === "true" ? " home" : " away"}`}>
+  <div className={`boxscore-details-team${home === "true" ? " home" : " away"} flex-container vertical`}>
     <p>
       <strong>{team.last_name}</strong>
-      <small>{team.abbreviation}</small>
     </p>
-    <span>36-28</span>
+    <span>36-18</span>
   </div>
 )
 

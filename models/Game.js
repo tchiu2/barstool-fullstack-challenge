@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Team = require('./Team.js');
 
 const GameSchema = new Schema({
   cache_expiration: { type: Date, default: Date.now() + 15000 },
@@ -22,6 +21,8 @@ const GameSchema = new Schema({
   },
   away_period_scores: [Number],
   home_period_scores: [Number],
+  away_results: [Number],
+  home_results: [Number],
   event_information: {
     duration: String,
     status: String,

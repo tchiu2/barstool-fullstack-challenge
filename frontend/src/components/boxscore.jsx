@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { getGame } from '../util/game_api_util';
 import Team from './team';
-import TeamCard from './team_card';
+import BoxscoreDetails from './boxscore_details';
 
 class Boxscore extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      home_team: {},
       away_team: {},
+      home_team: {},
       event_information: {},
       away_period_scores: [],
       home_period_scores: [],
@@ -25,7 +25,7 @@ class Boxscore extends Component {
 
   render() {
     return (
-      <div className="boxscore">
+      <div className="boxscore flex-container vertical">
         <Team 
           type="header"
           results={this.state.home_results}
@@ -40,11 +40,12 @@ class Boxscore extends Component {
           team={this.state.home_team}
           results={this.state.home_results}
           scores={this.state.home_period_scores} />
-        <TeamCard team={this.state.away_team} home="false" />
-        <div className="boxscore-details-info">
-          <strong>{this.state.event_information.status === "completed" ? "Final" : "In Progress"}</strong>
-        </div>
-        <TeamCard team={this.state.home_team} home="true" />
+        <BoxscoreDetails
+          teams={({
+            away: this.state.away_team,
+            home: this.state.home_team,
+          })}
+          status={this.state.event_information.status} />
       </div>
     );
   }

@@ -16,6 +16,25 @@ const fetchGameData = async (url, league) => {
       event_information
     } = data;
 
+    const away_results = [];
+    const home_results = [];
+
+    if (league === "MLB") {
+      away_results.push(
+        data.away_batter_totals.runs,
+        data.away_batter_totals.hits,
+        data.away_errors
+      );
+      home_results.push(
+        data.home_batter_totals.runs,
+        data.home_batter_totals.hits,
+        data.home_errors
+      );
+    } else {
+      away_results.push(data.away_totals.points);
+      home_results.push(data.home_totals.points);
+    }
+
     const game = new Game({
       cache_expiration: Date.now() + 15000,
       updated: Date.now(),
@@ -24,6 +43,8 @@ const fetchGameData = async (url, league) => {
       home_team,
       away_period_scores,
       home_period_scores,
+      away_results,
+      home_results,
       event_information
     }).toObject();
 
