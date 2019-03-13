@@ -113,6 +113,18 @@
   font-size: 0.8rem;
 }
 
+@media (max-width: 500px) {
+  .hide-full {
+    display: none;
+  }
+}
+
+@media not all and (max-width: 500px) {
+  .hide-abbr {
+    display: none;
+  }
+}
+
 .boxscore-details-info {
   padding: 1.7rem;
   background: #eee;
