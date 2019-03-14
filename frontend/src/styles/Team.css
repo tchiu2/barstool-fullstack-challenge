@@ -1,0 +1,48 @@
+.team {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+.header {
+  border-bottom: 1px solid #ccc;
+}
+
+.team.header > label {
+  border-top-left-radius: 8px;
+}
+
+.team.header > .team-results {
+  border-top-right-radius: 8px;
+}
+
+.team > label {
+  text-align: center;
+  white-space: pre;
+  min-width: 2rem;
+  padding: 5px;
+  background: #eee;
+  border-right: 1px solid #ccc;
+}
+
+.team-results {
+  flex: 1;
+  min-height: 100%;
+  justify-content: space-evenly;
+  background: #eee;
+  border-left: 1px solid #ccc;
+  font-weight: 700;
+}
+
+.team-units.flex-container {
+  flex: 5;
+  justify-content: space-evenly;
+  background: #fff;
+}
+
+.team-units > span,
+.team-results > span {
+  padding: 5px 0;
+  min-width: 1.5rem;
+  max-width: 3rem;
+  text-align: center;
+}

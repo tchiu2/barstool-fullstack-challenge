@@ -3,6 +3,8 @@ import { getGame } from '../util/game_api_util';
 import Team from './team';
 import BoxscoreDetails from './boxscore_details';
 
+import '../styles/Boxscore.css';
+
 class Boxscore extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +21,7 @@ class Boxscore extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
     getGame(this.props.league).then(res => {
       this.setState(res.data);
     });

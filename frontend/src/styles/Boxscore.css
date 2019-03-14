@@ -1,0 +1,48 @@
+.boxscore {
+  max-width: 600px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.boxscore > div {
+  width: 100%;
+  flex: 1;
+}
+
+.boxscore-details {
+  border-top: 1px solid #ccc;
+}
+
+.boxscore-details-team {
+  flex: 1;
+  padding: 10px 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.boxscore-details-team.away {
+  background: #052b6e;
+  border-bottom-left-radius: 8px;
+}
+
+.boxscore-details-team.home {
+  background: #c8002d;
+  border-bottom-right-radius: 8px;
+}
+
+.boxscore-details-team > p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.boxscore-details-team > span {
+  font-size: 0.8rem;
+}
+
+.boxscore-details-info {
+  padding: 1.7rem;
+  background: #eee;
+}

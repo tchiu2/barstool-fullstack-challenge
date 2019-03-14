@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-container.vertical {
+  flex-direction: column;
+}
+
+.flex-container.horizontal {
+  flex-direction: row;
+}
+
+.index {
+  flex-wrap: wrap;
+}
+
+.index > div {
+  margin: 30px;
+}
+
+@media (max-width: 500px) {
+  .hide-full {
+    display: none;
+  }
+}
+
+@media not all and (max-width: 500px) {
+  .hide-abbr {
+    display: none;
+  }
+}
